@@ -1,3 +1,4 @@
+$(document).ready(function(){
 let playerWin = 0;
 let playerLose = 0;
 let targetScore = 0;
@@ -16,19 +17,19 @@ function scoreBoard(){
     $("#Losses").html("Losses: " + playerLose);
 }
 
-$(".photo").click(function(){
+$(".card").click(function(){
     if (playerScore < targetScore){
     playerScore += parseInt($(this).attr("value"));
     scoreBoard();
     }
     else if (playerScore > targetScore) {
-        $("#winlose-marker").html("You lose");
+        alert("You lose!");
         playerLose++;
         pagePrep();
         scoreBoard();
     }
     else if (playerScore === targetScore){
-        $("#winlose-marker").html("You win!");
+        alert("You win!");
         playerWin++;
         pagePrep();
         scoreBoard();
@@ -44,13 +45,10 @@ function pagePrep(){
     $("#rx7-image").attr("value", carScore.rx7);
     carScore.skyline = Math.floor(Math.random()*12 + 1);
     $("#skyline-image").attr("value", carScore.skyline);
-    targetScore = Math.floor(Math.random()*120 +1);
+    targetScore = Math.floor(Math.random()*(120-19)+19);
     playerScore = 0;
 }
 
 pagePrep();
 scoreBoard();
-
-
-console.log(carScore);
-console.log(targetScore);
+})

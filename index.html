@@ -6,21 +6,77 @@
     <title>Car Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src = "https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
 </head>
 
 <body>
-    <div class = "photo" id = "bmw-image" value = "0">BMW</div>
-    <div class = "photo" id = "nissan-image" value = "0">NISSAN</div>
-    <div class = "photo" id = "rx7-image" value = "0">RX7</div>
-    <div class = "photo" id = "skyline-image" value = "0">SKYLINE</div>
-    <div id = "winlose-marker"></div>
-    <p id="Score"></p>
-    <p id="Target-Score"></p>
-    <p id="Wins"></p>
-    <p id="Losses"></p>
+    <div class="container">
+        <div class="row">
+            <h1>
+                Car Guessing Game
+            </h1>
+        </div>
+        <div class="row">
+            <p>
+                Select a car, they range from 1-12 points. Try to hit the target score
+                if you fail to hit the target score you lose.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;" id="bmw-image" value="0">
+                    <img src="assets/images/drift bmw.jpg" class="card-img-top" alt="BMW">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;" id="nissan-image" value="0">
+                    <img src="assets/images/drift nissan.jpg" class="card-img-top" alt="Nissan">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;" id="rx7-image" value="0">
+                    <img src="assets/images/drift rx7.jpg" class="card-img-top" alt="RX7">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;" id="skyline-image" value="0">
+                    <img src="assets/images/drift skyline.jpg" class="card-img-top" alt="Skyline">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-secondary" id="Score"></p>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-danger" id="Target-Score"></p>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary" id="Wins"></p>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-danger" id="Losses"></p>
+            </div>
+        </div>
+    </div>
 
-    <script src ="./assets/javascript/game.js"></script>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <img src="..." class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+    <script src="./assets/javascript/game.js"></script>
 </body>
 
 </html>
