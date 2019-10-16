@@ -17,8 +17,22 @@ function scoreBoard(){
 }
 
 $(".photo").click(function(){
+    if (playerScore < targetScore){
     playerScore += parseInt($(this).attr("value"));
     scoreBoard();
+    }
+    else if (playerScore > targetScore) {
+        $("#winlose-marker").html("You lose");
+        playerLose++;
+        pagePrep();
+        scoreBoard();
+    }
+    else if (playerScore === targetScore){
+        $("#winlose-marker").html("You win!");
+        playerWin++;
+        pagePrep();
+        scoreBoard();
+    }
 });
 
 function pagePrep(){
@@ -31,6 +45,7 @@ function pagePrep(){
     carScore.skyline = Math.floor(Math.random()*12 + 1);
     $("#skyline-image").attr("value", carScore.skyline);
     targetScore = Math.floor(Math.random()*120 +1);
+    playerScore = 0;
 }
 
 pagePrep();
