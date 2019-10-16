@@ -16,9 +16,10 @@ function scoreBoard(){
     $("#Losses").html("Losses: " + playerLose);
 }
 
-$("#image").on("touch click keyup", function(){
-
-})
+$(".photo").click(function(){
+    playerScore += parseInt($(this).attr("value"));
+    scoreBoard();
+});
 
 function pagePrep(){
     carScore.bmw = Math.floor(Math.random()*12 + 1);
